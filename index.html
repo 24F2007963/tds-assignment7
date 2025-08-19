@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Q2 Earnings — Interactive RevealJS Deck</title>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@5/dist/reveal.css" />
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@5/dist/theme/black.css" id="theme" />
+  <link rel="stylesheet" href="https://unpkg.com/highlight.js@11.9.0/styles/github.min.css" />
+  <style>
+    .footer { position: fixed; bottom: 12px; left: 24px; font-size: 14px; opacity: .7; }
+    .email { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- 1) Title slide with email and notes -->
+      <section>
+        <h1>Quarterly Earnings Report</h1>
+        <p class="fragment">Q2 FY2025 • Stakeholder Briefing</p>
+        <p class="fragment">Interactive deck (RevealJS)</p>
+        <p class="email">Presenter: 24f2007963@ds.study.iitm.ac.in</p>
+        <aside class="notes">
+          Welcome everyone. This deck showcases modern presentation features while summarizing the quarter.
+          Use the right arrow to proceed. Press <kbd>s</kbd> to open speaker view.
+        </aside>
+      </section>
+
+      <!-- 2) Slide written in Markdown -->
+      <section data-markdown>
+        <script type="text/template">
+# Q2 Snapshot (Markdown)
+
+- **Revenue:** `$ 2.35B`  
+- **OpEx:** `$ 1.42B`  
+- **Operating Margin:** `12.4%`  
+- **EPS (diluted):** `$ 1.18`
+
+> _All figures illustrative for demo._
+
+**Highlights**
+
+1. Double-digit growth in Payments
+2. Cloud migration reduced infra costs
+3. Strengthened capital adequacy
+
+*Tip:* This entire slide is authored in **Markdown**.
+        </script>
+        <aside class="notes">Call out that we can write slides directly in Markdown using the plugin.</aside>
+      </section>
+
+      <!-- 3) Animated elements using fragments -->
+      <section>
+        <h2>Operational Highlights</h2>
+        <ul>
+          <li class="fragment fade-in">Payments TPV up <strong>18%</strong> YoY</li>
+          <li class="fragment fade-in">Retail banking NIM expanded by <strong>22 bps</strong></li>
+          <li class="fragment fade-in">Cost-to-income improved to <strong>51%</strong></li>
+          <li class="fragment fade-in">GNPA held at <strong>1.7%</strong></li>
+        </ul>
+        <aside class="notes">Use fragments to reveal each bullet while speaking to it.</aside>
+      </section>
+
+      <!-- 4) Code samples with syntax highlighting -->
+      <section>
+        <h2>Code Sample: KPI Calculation</h2>
+        <pre><code class="language-python">from dataclasses import dataclass
+
+a = 2_350_000_000  # revenue
+b = 1_420_000_000  # operating expense
+
+operating_margin = (a - b) / a
+print(f"Operating margin: {operating_margin:.2%}")
+</code></pre>
+        <aside class="notes">Demonstrate syntax-highlighted code using the highlight plugin.</aside>
+      </section>
+
+      <!-- 5) Math equations (financial formulas) -->
+      <section>
+        <h2>Financial Math</h2>
+        <p>Net Present Value (NPV):</p>
+        <p>$$\mathrm{NPV} = \sum_{t=1}^{T} \frac{CF_t}{(1 + r)^{t}} - C_0$$</p>
+        <p>Compound Annual Growth Rate (CAGR):</p>
+        <p>$$\mathrm{CAGR} = \left(\frac{\text{Ending}}{\text{Beginning}}\right)^{\tfrac{1}{n}} - 1$$</p>
+        <aside class="notes">Math is rendered via the KaTeX plugin. Mention how formulas help interpret trends.</aside>
+      </section>
+
+      <!-- 6) Speaker notes demo + nested slides -->
+      <section>
+        <section>
+          <h2>Risk & Compliance</h2>
+          <p class="fragment">Credit risk remains stable within limits.</p>
+          <p class="fragment">Liquidity coverage ratio &gt; 120%.</p>
+          <aside class="notes">Use down-arrow to drill into details.</aside>
+        </section>
+        <section>
+          <h3>Stress Scenarios</h3>
+          <ul>
+            <li class="fragment">Rate shock: +150 bps</li>
+            <li class="fragment">Credit spread widening: +80 bps</li>
+            <li class="fragment">GDP downside: −1.2%</li>
+          </ul>
+          <aside class="notes">Each fragment introduces a separate stress input.</aside>
+        </section>
+      </section>
+
+      <!-- 7) Closing slide with links & print hint -->
+      <section>
+        <h2>Thank You</h2>
+        <p>Slides: GitHub Pages (static hosting)</p>
+        <p class="email">Contact: 24f2007963@ds.study.iitm.ac.in</p>
+        <p class="fragment">Press <kbd>?</kbd> for keyboard shortcuts</p>
+        <p class="fragment">Append <code>?print-pdf</code> to URL to export as PDF</p>
+        <aside class="notes">Invite questions and reference the hosted link.</aside>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal.js & Plugins (CDN) -->
+  <script src="https://unpkg.com/reveal.js@5/dist/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@5/plugin/markdown/markdown.js"></script>
+  <script src="https://unpkg.com/reveal.js@5/plugin/highlight/highlight.js"></script>
+  <script src="https://unpkg.com/reveal.js@5/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@5/plugin/math/math.js"></script>
+
+  <script>
+    const deck = new Reveal({
+      hash: true,
+      slideNumber: true,
+      transition: 'slide',
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
+      math: {}
+    });
+    deck.initialize();
+  </script>
+
+  <div class="footer">© Q2 FY2025 • Demo deck</div>
+</body>
+</html>
